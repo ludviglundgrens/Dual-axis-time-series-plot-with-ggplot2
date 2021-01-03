@@ -15,7 +15,7 @@ dplot <- function(df1, date1, df2, date2, name1 = "Series 1", name2 = "Series 2"
   ggplot2::ggplot()+
     geom_line(aes(x = date1, y = ((df1-mean_1)/fact)+mean_1-diff, color = name1))+
     geom_line(aes(x = date2, y = df2, color = name2))+
-    scale_y_continuous(sec.axis = sec_axis(~(.+diff-mean_1)*fact+mean_1, name = "hej"))+
+    scale_y_continuous(sec.axis = sec_axis(~(.+diff-mean_1)*fact+mean_1, name = ylab2))+
     labs(x = xlab, y = ylab, title = title, subtitle = subtitle, caption = caption)+
     theme_light()+
     scale_colour_manual(values=cols)+
